@@ -85,6 +85,8 @@ h3 { font-size: 1.08rem; font-weight: 700; }
 .card.project { padding: 0; overflow: hidden; }
 .project .shot { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: var(--soft); border-bottom: 1px solid var(--line); }
 .project .body { padding: 1.25rem 1.5rem 1.4rem; }
+.group { color: var(--muted); font-size: 0.95rem; font-weight: 700; margin: 0 0 1rem; }
+.cards + .group { margin-top: 2.5rem; }
 .project .tag { display: inline-block; background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 0.85rem; border-radius: 999px; padding: 0.2rem 0.75rem; margin-bottom: 0.8rem; }
 
 .contact { margin: 5rem 0 0; background: var(--ink); color: var(--bg); border-radius: 28px; padding: 3.5rem 2.5rem; }
@@ -184,13 +186,25 @@ footer { padding: 2rem 0 2.5rem; color: var(--muted); font-size: 0.9rem; }
 
   <section id="projects">
     <h2>Selected projects</h2>
+    <h3 class="group">United States</h3>
     <div class="cards">
+      <div class="card project"><img class="shot" src="project-cleveland-clinic-weston.jpg" alt="3D structural model of the Cleveland Clinic Weston emergency department and ICU tower" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Healthcare</span><h3>Cleveland Clinic Weston Expansion, Weston, FL</h3><p>Six-story, 75,000 sq ft emergency department and ICU tower, designed for 180 mph hurricane winds.</p></div></div>
       <div class="card project"><img class="shot" src="project-uchicago-orland-park.jpg" alt="Rendering of the UChicago Medicine Center for Advanced Care" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Healthcare</span><h3>UChicago Medicine Center for Advanced Care, Orland Park, IL</h3><p>Four-story medical building with clinics and a ground-floor pharmacy.</p></div></div>
       <div class="card project"><img class="shot" src="project-uchicago-office-tower.jpg" alt="Rendering of the UChicago Medicine Faculty Office Tower" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Office</span><h3>UChicago Medicine Faculty Office Tower, Chicago, IL</h3><p>High-rise office tower on the medical campus, linked to the hospital by a skybridge.</p></div></div>
       <div class="card project"><img class="shot" src="project-neiu-education.jpg" alt="Rendering of the Northeastern Illinois University Education Building" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Education</span><h3>NEIU Education Building, Chicago, IL</h3><p>New education building with a curved glass connector and a landscaped terrace.</p></div></div>
       <div class="card project"><img class="shot" src="project-uiuc-everitt-lab.jpg" alt="Rendering of the renovated Everitt Laboratory at UIUC" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Research lab</span><h3>UIUC Everitt Laboratory Renovation, Urbana, IL</h3><p>Renovation and expansion of the bioengineering laboratory building.</p></div></div>
       <div class="card project"><img class="shot" src="project-legacy-charter-school.jpg" alt="First floor plan of Legacy Charter School" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Education</span><h3>Legacy Charter School, Chicago, IL</h3><p>New school building with classrooms and a gymnasium.</p></div></div>
       <div class="card project"><img class="shot" src="project-central-park-pumping.jpg" alt="Pump room at the Central Park Pumping Station" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Water infrastructure</span><h3>Central Park Pumping Station, Chicago, IL</h3><p>Design of a new pump room for the station’s electrification.</p></div></div>
+      <div class="card project"><img class="shot" src="project-albany-park-shaft.jpg" alt="Section drawing of the Albany Park tunnel outlet shaft" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Water infrastructure</span><h3>Albany Park Stormwater Diversion Tunnel, Chicago, IL</h3><p>30 ft diameter shaft and outfall structure for the City of Chicago’s flood-control tunnel.</p></div></div>
+      <div class="card project"><img class="shot" src="project-ohare-a380-gate.jpg" alt="Plan of the A380 passenger boarding bridges at O’Hare Terminal 5" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Aviation</span><h3>O’Hare Terminal 5 A380 Gate Enhancement, Chicago, IL</h3><p>Passenger boarding bridge and gate upgrades so Terminal 5 can serve the Airbus A380.</p></div></div>
+      <div class="card project"><img class="shot" src="project-ohare-lift-station.jpg" alt="Section drawing of the Miami Beach sanitary sewer lift station" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Water infrastructure</span><h3>Miami Beach Sanitary Lift Station, O’Hare Airport, Chicago, IL</h3><p>Below-grade concrete lift station with a wet well, dry well and 2-ton crane.</p></div></div>
+    </div>
+    <h3 class="group">Singapore and Asia</h3>
+    <div class="cards">
+      <div class="card project"><img class="shot" src="project-circle-line-mrt.jpg" alt="Platform level of a Circle Line MRT station" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Transit</span><h3>Kent Ridge and Holland Village MRT Stations, Singapore</h3><p>Underground metro stations on the Circle Line.</p></div></div>
+      <div class="card project"><img class="shot" src="project-senoko-power.jpg" alt="Aerial view of the Senoko combined cycle power plant" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Power</span><h3>Senoko Power Plant, Singapore</h3><p>$600M conversion from oil-fired to gas-fired combined cycle plants.</p></div></div>
+      <div class="card project"><img class="shot" src="project-joo-seng-green.jpg" alt="Joo Seng Green residential tower under construction" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Residential</span><h3>Joo Seng Green, Singapore</h3><p>Residential towers with 243 apartments, delivered with a 5% shorter construction time.</p></div></div>
+      <div class="card project"><img class="shot" src="project-mmhe-offshore-yard.jpg" alt="Offshore platform modules at the MMHE fabrication yard" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Marine and offshore</span><h3>MMHE Offshore Platform Load-out Facilities, Malaysia</h3><p>Load-out facilities for moving offshore platform modules from the yard onto barges.</p></div></div>
     </div>
   </section>
 
