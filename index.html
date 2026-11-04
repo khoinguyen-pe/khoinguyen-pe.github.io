@@ -69,6 +69,8 @@ h3 { font-size: 1.08rem; font-weight: 700; }
 
 .about p { max-width: 64ch; font-size: 1.15rem; }
 .about p + p { margin-top: 1rem; }
+.about .lead { font-size: clamp(1.35rem, 2.6vw, 1.7rem); font-weight: 700; line-height: 1.35; letter-spacing: -0.015em; max-width: 34ch; margin-bottom: 1.5rem; }
+.about .card .seat { color: var(--accent); font-size: 0.85rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 0.35rem; }
 .about .cards { margin-top: 2rem; }
 .card p { color: var(--muted); margin-top: 0.35rem; }
 
@@ -150,12 +152,13 @@ footer { padding: 2rem 0 2.5rem; color: var(--muted); font-size: 0.9rem; }
 
   <section id="about" class="about">
     <h2>About</h2>
-    <p>Over 20 years I’ve worked on hospitals, metro stations, power plants, reservoirs and homes, at firms like Skidmore, Owings &amp; Merrill and Parsons Brinckerhoff, across the United States and Singapore.</p>
-    <p>Today I co-lead <a href="https://plankore.ai">Plankore</a>, a San Francisco team of structural engineers and AI Ph.D.s. We prepare takeoffs and permit drawings for builders, and we’re building the AI takeoff and permit software I always wanted to use. From 2023 to 2025 I was a plan check professional for the City of Fremont, so I know the permit process from every side.</p>
+    <p class="lead">I’ve sat in every seat on a project: the engineer who designs it, the builder who puts it up, and the city reviewer who approves it.</p>
+    <p>I designed hospitals, metro stations and Singapore’s largest prestressed concrete water tank at firms like Skidmore, Owings &amp; Merrill and Parsons Brinckerhoff. In Singapore I worked as a resident engineer on high-rise sites, inspecting every pile, beam and slab as it went in. Back in California I ran my own design-build firm, then spent two years checking permit plans for the City of Fremont.</p>
+    <p>Now I co-lead <a href="https://plankore.ai">Plankore</a>, a San Francisco team of structural engineers and AI Ph.D.s. We prepare permit drawings and construction takeoffs for builders, and we’re building the AI software I always wished I had.</p>
     <div class="cards">
-      <div class="card"><h3>Structural design</h3><p>Steel, concrete, wood and masonry, for gravity, seismic, wind and vibration.</p></div>
-      <div class="card"><h3>Permits and plan check</h3><p>Complete permit drawing sets and coordination with Bay Area planning and building departments.</p></div>
-      <div class="card"><h3>Construction management</h3><p>Site inspection, subcontractors, schedules and budgets, from groundbreaking to handover.</p></div>
+      <div class="card"><p class="seat">Design</p><h3>Structural engineer</h3><p>Steel, concrete, wood and masonry for gravity, seismic, hurricane wind and vibration, from 2-story homes to 20-story towers.</p></div>
+      <div class="card"><p class="seat">Build</p><h3>Contractor and resident engineer</h3><p>Ran sites, subcontractors and inspections from foundations to handover, and engineered about 150 tower crane and hoist installs.</p></div>
+      <div class="card"><p class="seat">Review</p><h3>Plan checker</h3><p>Reviewed residential and commercial submittals for the City of Fremont, so I know what a reviewer looks for before a set goes in.</p></div>
     </div>
   </section>
 
