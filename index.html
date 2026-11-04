@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Khoi</title>
+<meta name="description" content="Personal website of Khoi.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EEF2F7; --ink: #1B2A41; --muted: #5B6B82; --line: #D3DBE6; --accent: #2F8F6F;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121A26; --ink: #E6ECF4; --muted: #9AA8BC; --line: #2A3647; --accent: #5CC9A0; color-scheme: dark; }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1.0625rem; line-height: 1.65;
+    padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+  }
+  main { max-width: 680px; margin: 0 auto; padding: 4.5rem 1.5rem 3rem; }
+  h1 { font-size: clamp(2.6rem, 9vw, 4.4rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.035em; }
+  h1 .hello { display: block; font-size: 0.42em; font-weight: 500; letter-spacing: 0; color: var(--accent); margin-bottom: 0.4rem; }
+  .intro { margin-top: 1.4rem; font-size: 1.2rem; color: var(--muted); max-width: 34ch; }
+  .links { display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; margin-top: 1.8rem; padding: 0; list-style: none; }
+  a { color: var(--ink); text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  a:hover { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  section { margin-top: 4rem; }
+  h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 1rem; }
+  section p + p { margin-top: 0.9rem; }
+  .project { padding: 1.1rem 0; border-top: 1px solid var(--line); }
+  .project:last-child { border-bottom: 1px solid var(--line); }
+  .project h3 { font-size: 1.05rem; font-weight: 700; }
+  .project p { color: var(--muted); margin-top: 0.2rem; }
+  .skills { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; list-style: none; }
+  .skills li { border: 1px solid var(--line); border-radius: 999px; padding: 0.2rem 0.85rem; font-size: 0.95rem; }
+  footer { margin-top: 5rem; color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <!-- ✏️ EDIT: change the text below to your own -->
+  <header>
+    <h1><span class="hello">Xin chào, I’m</span>Khoi</h1>
+    <p class="intro">I’m a student and developer who likes building small, useful things on the web.</p>
+    <ul class="links">
+      <li><a href="mailto:you@example.com">Email</a></li>
+      <li><a href="https://github.com/Khoi-pe">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/yourname">LinkedIn</a></li>
+    </ul>
+  </header>
+
+  <section>
+    <h2>About me</h2>
+    <p>I’m based in Vietnam. Right now I’m learning web development and working on personal projects to grow my skills.</p>
+    <p>Outside of coding, I enjoy coffee, music, and exploring new places.</p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <!-- ✏️ Copy a whole <div class="project">…</div> block to add another project -->
+    <div class="project">
+      <h3><a href="#">Project one</a></h3>
+      <p>A short sentence about what this project does and what you used to build it.</p>
+    </div>
+    <div class="project">
+      <h3><a href="#">Project two</a></h3>
+      <p>A short sentence about what this project does and what you used to build it.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <ul class="skills">
+      <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li><li>Git</li>
+    </ul>
+  </section>
+
+  <footer>© <span id="year">2026</span> Khoi</footer>
+</main>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
