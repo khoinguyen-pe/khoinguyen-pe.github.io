@@ -60,7 +60,13 @@ h1 { font-weight: 800; font-size: clamp(2.6rem, 6vw, 4rem); line-height: 1.05; l
 .worked { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-top: 2.25rem; }
 .worked p { color: var(--muted); font-size: 0.92rem; font-weight: 600; }
 .worked ul { display: flex; flex-wrap: wrap; gap: 0.75rem 2rem; list-style: none; padding: 0; }
-.worked li { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.01em; color: var(--muted); opacity: 0.85; }
+.worked ul { align-items: center; }
+.worked li { display: flex; align-items: center; font-weight: 800; font-size: 1.05rem; letter-spacing: -0.01em; color: var(--muted); opacity: 0.85; }
+.logo { display: block; width: auto; height: 30px; opacity: 0.6; transition: opacity 0.15s; }
+.logo:hover { opacity: 0.9; }
+.l-som { height: 22px; } .l-bigge { height: 24px; } .l-rme { height: 32px; } .l-worley { height: 30px; } .l-sj { height: 28px; }
+.edu-logo { display: block; height: 44px; width: auto; margin: 0.25rem 0 0.9rem; opacity: 0.7; }
+@media (prefers-color-scheme: dark) { .logo, .edu-logo { filter: invert(1); } }
 
 section { padding: 5rem 0 0; }
 h2 { font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1.75rem; }
@@ -180,7 +186,7 @@ section, #top { scroll-margin-top: 76px; }
 
   <div class="worked">
     <p>Worked at</p>
-    <ul><li>City of Fremont</li><li>Skidmore, Owings &amp; Merrill</li><li>Parsons Brinckerhoff</li><li>WorleyParsons</li><li>Surbana Jurong</li><li>Bigge Crane and Rigging</li><li>Rubinos &amp; Mesia</li></ul>
+    <ul><li>City of Fremont</li><li><img class="logo l-som" src="logos/som.png" alt="Skidmore, Owings &amp; Merrill (SOM)" title="Skidmore, Owings &amp; Merrill"></li><li>Parsons Brinckerhoff</li><li><img class="logo l-worley" src="logos/worley.png" alt="Worley (formerly WorleyParsons)" title="Worley (formerly WorleyParsons)"></li><li><img class="logo l-sj" src="logos/sj.png" alt="Surbana Jurong" title="Surbana Jurong"></li><li><img class="logo l-bigge" src="logos/bigge.png" alt="Bigge Crane and Rigging" title="Bigge Crane and Rigging"></li><li><img class="logo l-rme" src="logos/rme.png" alt="Rubinos &amp; Mesia Engineers (RME)" title="Rubinos &amp; Mesia Engineers"></li></ul>
   </div>
 
   <section id="about" class="about">
@@ -236,7 +242,7 @@ section, #top { scroll-margin-top: 76px; }
     <div class="cards">
       <div class="card"><h3>Professional Engineer, Civil</h3><p class="num">California license #89319</p><a class="verified" href="https://search.dca.ca.gov/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Verify license</a></div>
       <div class="card"><h3>Contractor licenses</h3><p class="num">Class A, General Engineering<br>Class B, General Building<br>California license #1121625</p><a class="verified" href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=1121625"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Verify license</a></div>
-      <div class="card"><h3>Education</h3><p class="num">M.S. in Civil Engineering<br>National University of Singapore, 2011</p><p class="num" style="margin-top: 0.75rem">B.Eng. in Civil Engineering<br>National University of Singapore, 2007</p></div>
+      <div class="card"><img class="edu-logo logo-nus" src="logos/nus.png" alt="National University of Singapore"><h3>Education</h3><p class="num">M.S. in Civil Engineering<br>National University of Singapore, 2011</p><p class="num" style="margin-top: 0.75rem">B.Eng. in Civil Engineering<br>National University of Singapore, 2007</p></div>
     </div>
     <div class="sub">
       <h3>Software and codes</h3>
