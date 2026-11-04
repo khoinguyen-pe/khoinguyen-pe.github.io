@@ -3,88 +3,222 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Khoi</title>
-<meta name="description" content="Personal website of Khoi.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+<title>Khoi Nguyen, P.E. | Civil &amp; Structural Engineer</title>
+<meta name="description" content="Khoi Nguyen, P.E. California-licensed civil and structural engineer with 15 years of experience designing and building commercial, infrastructure and residential projects.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #EEF2F7; --ink: #1B2A41; --muted: #5B6B82; --line: #D3DBE6; --accent: #2F8F6F;
-    color-scheme: light;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #121A26; --ink: #E6ECF4; --muted: #9AA8BC; --line: #2A3647; --accent: #5CC9A0; color-scheme: dark; }
-  }
-  * { box-sizing: border-box; margin: 0; }
-  body {
-    background: var(--bg); color: var(--ink);
-    font-family: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
-    font-size: 1.0625rem; line-height: 1.65;
-    padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
-  }
-  main { max-width: 680px; margin: 0 auto; padding: 4.5rem 1.5rem 3rem; }
-  h1 { font-size: clamp(2.6rem, 9vw, 4.4rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.035em; }
-  h1 .hello { display: block; font-size: 0.42em; font-weight: 500; letter-spacing: 0; color: var(--accent); margin-bottom: 0.4rem; }
-  .intro { margin-top: 1.4rem; font-size: 1.2rem; color: var(--muted); max-width: 34ch; }
-  .links { display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; margin-top: 1.8rem; padding: 0; list-style: none; }
-  a { color: var(--ink); text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 4px; }
-  a:hover { color: var(--accent); }
-  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-  section { margin-top: 4rem; }
-  h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 1rem; }
-  section p + p { margin-top: 0.9rem; }
-  .project { padding: 1.1rem 0; border-top: 1px solid var(--line); }
-  .project:last-child { border-bottom: 1px solid var(--line); }
-  .project h3 { font-size: 1.05rem; font-weight: 700; }
-  .project p { color: var(--muted); margin-top: 0.2rem; }
-  .skills { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; list-style: none; }
-  .skills li { border: 1px solid var(--line); border-radius: 999px; padding: 0.2rem 0.85rem; font-size: 0.95rem; }
-  footer { margin-top: 5rem; color: var(--muted); font-size: 0.9rem; }
+:root {
+  --bg: #EDEFF1; --paper: #FFFFFF; --ink: #16202B; --muted: #5A6675; --line: #C9D0D8; --accent: #1F5FA8;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #10161D; --paper: #171F28; --ink: #E4E9EF; --muted: #94A1B0; --line: #2A3542; --accent: #7FB2EC; color-scheme: dark; }
+}
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem; line-height: 1.6;
+  padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Title block hero, like the corner of a structural drawing */
+.hero { padding: 4rem 0 3rem; }
+.sheet { background: var(--paper); border: 2px solid var(--ink); display: grid; grid-template-columns: 1fr auto; }
+.sheet-main { padding: 2rem 2rem 1.75rem; display: flex; gap: 1.5rem; align-items: center; }
+.sheet-main img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 2px solid var(--line); flex-shrink: 0; }
+h1 { font-stretch: 125%; font-weight: 800; font-size: clamp(1.9rem, 5.5vw, 3.2rem); line-height: 1.02; letter-spacing: -0.01em; }
+.role { margin-top: 0.5rem; font-size: 1.15rem; color: var(--muted); }
+.stamp { border-left: 2px solid var(--ink); padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: center; }
+.seal { width: 112px; height: 112px; border: 2px solid var(--accent); border-radius: 50%; display: grid; place-content: center; text-align: center; color: var(--accent); font-stretch: 75%; font-weight: 700; font-size: 0.8rem; line-height: 1.25; outline: 1px solid var(--accent); outline-offset: -8px; }
+.seal b { font-size: 1.5rem; font-stretch: 100%; display: block; }
+.fields { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 2px solid var(--ink); }
+.fields div { padding: 0.75rem 1rem; border-right: 1px solid var(--line); }
+.fields div:last-child { border-right: 0; }
+.fields dt { font-size: 0.78rem; color: var(--muted); font-stretch: 80%; }
+.fields dd { font-weight: 600; font-size: 0.98rem; }
+.cta { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; align-items: center; margin-top: 1.5rem; }
+.btn { background: var(--ink); color: var(--paper); text-decoration: none; padding: 0.7rem 1.3rem; font-weight: 600; border: 2px solid var(--ink); }
+.btn:hover { background: var(--accent); border-color: var(--accent); }
+
+/* Sections marked with gridline bubbles */
+section { padding: 3.5rem 0 1rem; }
+.head { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.5rem; }
+.bubble { width: 2.4rem; height: 2.4rem; border: 2px solid var(--ink); border-radius: 50%; display: grid; place-content: center; font-weight: 700; flex-shrink: 0; }
+.head::after { content: ""; flex: 1; border-top: 1px dashed var(--line); }
+h2 { font-stretch: 112%; font-weight: 700; font-size: 1.5rem; }
+.lead { max-width: 62ch; font-size: 1.15rem; }
+.lead + .lead { margin-top: 1rem; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem 2.5rem; margin-top: 2rem; }
+.cols h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; }
+.cols p { color: var(--muted); }
+
+.job { display: grid; grid-template-columns: 9.5rem 1fr; gap: 0 1.5rem; padding: 1.4rem 0; border-top: 1px solid var(--line); }
+.job:last-child { border-bottom: 1px solid var(--line); }
+.when { color: var(--muted); font-stretch: 85%; font-variant-numeric: tabular-nums; padding-top: 0.15rem; }
+.job h3 { font-size: 1.12rem; font-weight: 700; }
+.job .at { color: var(--muted); }
+.job ul { margin-top: 0.5rem; padding-left: 1.1rem; max-width: 64ch; }
+.job li + li { margin-top: 0.25rem; }
+
+.projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); border-top: 2px solid var(--ink); border-left: 1px solid var(--line); }
+.project { padding: 1.25rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper); }
+.project .spec { font-stretch: 80%; color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+.project h3 { font-size: 1.05rem; margin: 0.2rem 0 0.4rem; }
+.project p { color: var(--muted); font-size: 0.98rem; }
+
+.split { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem 3rem; }
+.split h3 { font-size: 1.05rem; margin-bottom: 0.6rem; }
+.plain { list-style: none; padding: 0; }
+.plain li { padding: 0.55rem 0; border-top: 1px solid var(--line); }
+.plain li span { display: block; color: var(--muted); font-size: 0.95rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.45rem; list-style: none; padding: 0; }
+.tags li { border: 1px solid var(--line); background: var(--paper); padding: 0.2rem 0.7rem; font-size: 0.95rem; }
+
+.contact { background: var(--ink); color: var(--bg); margin-top: 4rem; padding: 3.5rem 0; }
+.contact h2 { font-stretch: 125%; font-size: clamp(1.6rem, 4.5vw, 2.4rem); }
+.contact p { margin-top: 0.75rem; max-width: 52ch; opacity: 0.85; }
+.contact a { color: inherit; }
+.contact .mail { display: inline-block; margin-top: 1.25rem; font-size: 1.25rem; font-weight: 600; }
+footer { padding: 1.5rem 0 2rem; color: var(--muted); font-size: 0.9rem; }
+
+@media (max-width: 640px) {
+  .sheet { grid-template-columns: 1fr; }
+  .sheet-main { flex-direction: column; align-items: flex-start; padding: 1.5rem; }
+  .stamp { border-left: 0; border-top: 2px solid var(--ink); justify-content: flex-start; }
+  .fields { grid-template-columns: 1fr 1fr; }
+  .fields div:nth-child(2) { border-right: 0; }
+  .fields div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .job { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
-<main>
-  <!-- ✏️ EDIT: change the text below to your own -->
-  <header>
-    <h1><span class="hello">Xin chào, I’m</span>Khoi</h1>
-    <p class="intro">I’m a student and developer who likes building small, useful things on the web.</p>
-    <ul class="links">
-      <li><a href="mailto:you@example.com">Email</a></li>
-      <li><a href="https://github.com/khoinguyen-pe">GitHub</a></li>
-      <li><a href="https://linkedin.com/in/yourname">LinkedIn</a></li>
-    </ul>
-  </header>
-
-  <section>
-    <h2>About me</h2>
-    <p>I’m based in Vietnam. Right now I’m learning web development and working on personal projects to grow my skills.</p>
-    <p>Outside of coding, I enjoy coffee, music, and exploring new places.</p>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <!-- ✏️ Copy a whole <div class="project">…</div> block to add another project -->
-    <div class="project">
-      <h3><a href="#">Project one</a></h3>
-      <p>A short sentence about what this project does and what you used to build it.</p>
+<header class="hero">
+  <div class="wrap">
+    <div class="sheet">
+      <div class="sheet-main">
+        <img src="https://github.com/khoinguyen-pe.png" alt="Portrait of Khoi Nguyen">
+        <div>
+          <h1>Khoi Nguyen, P.E.</h1>
+          <p class="role">Civil and structural engineer, builder, and owner of Aphora Group</p>
+        </div>
+      </div>
+      <div class="stamp">
+        <div class="seal">California<b>P.E.</b>Civil</div>
+      </div>
+      <dl class="fields">
+        <div><dt>Experience</dt><dd>15 years</dd></div>
+        <div><dt>Based in</dt><dd>San Francisco Bay Area</dd></div>
+        <div><dt>Worked in</dt><dd>USA and Singapore</dd></div>
+        <div><dt>Contractor licenses</dt><dd>Class A and B</dd></div>
+      </dl>
     </div>
-    <div class="project">
-      <h3><a href="#">Project two</a></h3>
-      <p>A short sentence about what this project does and what you used to build it.</p>
+    <div class="cta">
+      <a class="btn" href="mailto:vietkhoi.nguyen@gmail.com">Email Khoi</a>
+      <a href="#experience">See experience</a>
+      <a href="https://www.aphoragroup.us/">Visit Aphora Group</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="about">
+    <div class="head"><span class="bubble">A</span><h2>About</h2></div>
+    <p class="lead">I design structures and see them through to construction. Over 15 years I’ve worked on hospitals, metro stations, power plants, reservoirs and homes, at firms like Skidmore, Owings &amp; Merrill and Parsons Brinckerhoff, across the United States and Singapore.</p>
+    <p class="lead">Today I run Aphora Group, a residential design and construction management company in the Bay Area. I take projects from drawings and permits all the way to final inspection.</p>
+    <div class="cols">
+      <div><h3>Structural design</h3><p>Steel, concrete, wood and masonry, for gravity, seismic, wind and vibration.</p></div>
+      <div><h3>Permits and plan check</h3><p>Complete permit drawing sets and coordination with Bay Area planning and building departments.</p></div>
+      <div><h3>Construction management</h3><p>Site inspection, subcontractors, schedules and budgets, from groundbreaking to handover.</p></div>
     </div>
   </section>
 
-  <section>
-    <h2>Skills</h2>
-    <ul class="skills">
-      <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li><li>Git</li>
-    </ul>
+  <section id="experience">
+    <div class="head"><span class="bubble">B</span><h2>Experience</h2></div>
+    <div class="job">
+      <div class="when">2020 to now</div>
+      <div><h3>Business owner</h3><p class="at">Aphora Group Inc., East Palo Alto, CA</p>
+        <ul><li>Produce architectural and structural drawings for new homes, additions and remodels.</li><li>Secure permits with planning and building departments across Bay Area cities.</li><li>Manage construction, subcontractors and city inspections, plus marketing, budgeting and client relationships.</li></ul></div>
+    </div>
+    <div class="job">
+      <div class="when">2016 to 2017</div>
+      <div><h3>Project engineer</h3><p class="at">Bigge Crane and Rigging, San Leandro, CA</p>
+        <ul><li>Technical lead on about 150 engineering requests to install construction hoists and tower cranes for clients nationwide.</li><li>Led 3 to 5 drafters and owned final drawing quality, from feasibility through removal.</li></ul></div>
+    </div>
+    <div class="job">
+      <div class="when">2016</div>
+      <div><h3>Structural engineer</h3><p class="at">Skidmore, Owings &amp; Merrill (SOM), Chicago, IL</p>
+        <ul><li>Designed the 6-story, 75,000 sq ft Cleveland Clinic in Weston, Florida for 180 mph hurricane winds, cutting design time by 30%.</li><li>Schematic design of a 200,000 sq ft riverfront office building in Chicago, finished 40% ahead of schedule.</li></ul></div>
+    </div>
+    <div class="job">
+      <div class="when">2014 to 2016</div>
+      <div><h3>Structural engineer</h3><p class="at">Rubinos &amp; Mesia Engineers, Chicago, IL</p>
+        <ul><li>Designed university buildings and a medical center of 3 to 20 stories, a flood-control tunnel shaft and a pumping station retrofit.</li><li>Worked on the University of Chicago Medical Center and the O’Hare Airport upgrade for the Airbus A380.</li></ul></div>
+    </div>
+    <div class="job">
+      <div class="when">2012 to 2014</div>
+      <div><h3>Resident engineer</h3><p class="at">Surbana Jurong, Singapore</p>
+        <ul><li>Accredited resident engineer leading 8 to 10 site officers; caught construction errors that saved about $500K.</li><li>Delivered Joo Seng Green Residence (243 apartments) with a 5% reduction in construction time.</li></ul></div>
+    </div>
+    <div class="job">
+      <div class="when">2010 to 2012</div>
+      <div><h3>Project engineer</h3><p class="at">WorleyParsons, Singapore</p>
+        <ul><li>Managed a $32M nationwide high-pressure gas pipeline project, completed 18% ahead of schedule.</li><li>Technical consultant on the $600M Senoko Power conversion from oil-fired to gas-fired combined cycle plants.</li></ul></div>
+    </div>
+    <div class="job">
+      <div class="when">2007 to 2010</div>
+      <div><h3>Structural engineer</h3><p class="at">Parsons Brinckerhoff, Singapore</p>
+        <ul><li>Designed metro station structures, a reservoir, offshore construction yards and terminal facilities.</li><li>Sole engineer on Singapore’s largest prestressed concrete water tank.</li></ul></div>
+    </div>
   </section>
 
-  <footer>© <span id="year">2026</span> Khoi</footer>
+  <section id="projects">
+    <div class="head"><span class="bubble">C</span><h2>Selected projects</h2></div>
+    <div class="projects">
+      <div class="project"><p class="spec">Healthcare, $302M</p><h3>Cleveland Clinic, Weston, FL</h3><p>6 stories and 75,000 sq ft, designed to withstand 180 mph hurricane winds.</p></div>
+      <div class="project"><p class="spec">Transit, $500M</p><h3>Kent Ridge and Holland metro stations</h3><p>Underground entrances, ventilation shafts, link-ways and a 6 ft thick platform slab.</p></div>
+      <div class="project"><p class="spec">Water, 330 ft diameter</p><h3>Public Utilities Board reservoir</h3><p>Singapore’s largest prestressed concrete water tank, delivered 10% ahead of schedule.</p></div>
+      <div class="project"><p class="spec">Energy, $600M</p><h3>Senoko Power conversion</h3><p>Three 250 MW oil-fired plants converted to two 430 MW gas-fired combined cycle plants.</p></div>
+      <div class="project"><p class="spec">Aviation</p><h3>O’Hare Airport A380 upgrade</h3><p>Structural work to prepare Chicago O’Hare for the Airbus A380.</p></div>
+      <div class="project"><p class="spec">Heavy industry, 52,000 tons</p><h3>Offshore platform construction yards</h3><p>Bulkheads and skidding facilities carrying loads of 6,300 psf.</p></div>
+    </div>
+  </section>
+
+  <section id="credentials">
+    <div class="head"><span class="bubble">D</span><h2>Licenses and education</h2></div>
+    <div class="split">
+      <div><h3>Licenses</h3>
+        <ul class="plain"><li>Professional Engineer, Civil<span>State of California</span></li><li>General Engineering Contractor<span>Class A license</span></li><li>General Building Contractor<span>Class B license</span></li></ul></div>
+      <div><h3>Education</h3>
+        <ul class="plain"><li>M.S. Civil Engineering<span>National University of Singapore, 2011</span></li><li>B.Eng. Civil Engineering<span>National University of Singapore, 2007</span></li></ul></div>
+      <div><h3>Software and codes</h3>
+        <ul class="tags"><li>ETABS</li><li>SAP2000</li><li>SAFE</li><li>RAM</li><li>RISA 3D</li><li>AutoCAD</li><li>Revit</li><li>Plaxis</li><li>EnerCal</li><li>S-Concrete</li><li>ASCE 7</li><li>ACI 318</li><li>AISC 360 and 341</li><li>NDS</li><li>California Building Code</li></ul></div>
+    </div>
+  </section>
+
+  <section id="beyond">
+    <div class="head"><span class="bubble">E</span><h2>Beyond work</h2></div>
+    <p class="lead">I’ve backpacked in more than 20 countries: skydiving in New Zealand, riding a motorcycle across Taiwan and skiing in Switzerland. Closer to home I play tennis, badminton and soccer, hike, and volunteer with Rebuilding Together.</p>
+  </section>
 </main>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Planning a build?</h2>
+    <p>Whether it’s a remodel, an addition or a new home in the Bay Area, I’m happy to talk through structure, permits and construction.</p>
+    <a class="mail" href="mailto:vietkhoi.nguyen@gmail.com">vietkhoi.nguyen@gmail.com</a>
+  </div>
+</section>
+<footer class="wrap">© <span id="year">2026</span> Khoi Nguyen, P.E.</footer>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
