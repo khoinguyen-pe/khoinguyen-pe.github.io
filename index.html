@@ -59,14 +59,19 @@ h1 { font-weight: 800; font-size: clamp(2.6rem, 6vw, 4rem); line-height: 1.05; l
 
 .worked { margin-top: 2.5rem; }
 .worked p { color: var(--muted); font-size: 0.92rem; font-weight: 600; margin-bottom: 1.25rem; }
-.worked ul { --s: 1; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: center; gap: 1.75rem 2rem; list-style: none; padding: 0; }
-.worked li { display: flex; align-items: center; min-width: 0; }
-.logo { display: block; width: auto; max-width: 100%; object-fit: contain; height: calc(var(--h) * var(--s) * 1px); }
-.l-fremont { --h: 50; } .l-som { --h: 28; } .l-pb { --h: 34; } .l-worley { --h: 38; } .l-sj { --h: 35; }
-.l-bigge { --h: 31; } .l-rme { --h: 41; } .l-nus { --h: 47; }
-@media (max-width: 760px) { .worked ul { --s: 0.68; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem 1.25rem; } }
+.worked ul { display: flex; align-items: center; justify-content: space-between; gap: 2.2%; list-style: none; padding: 0; }
+.worked li { flex: var(--w) 1 0; min-width: 0; display: flex; justify-content: center; }
+.logo { display: block; width: 100%; height: auto; }
+.l-fremont { --w: 85; } .l-som { --w: 56; } .l-pb { --w: 134; } .l-worley { --w: 108; } .l-sj { --w: 94; }
+.l-bigge { --w: 66; } .l-rme { --w: 74; } .l-nus { --w: 72; }
+.worked li:first-child { justify-content: flex-start; } .worked li:last-child { justify-content: flex-end; }
+@media (max-width: 760px) {
+  .worked ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem 1.25rem; }
+  .logo { width: auto; max-width: 100%; height: calc(var(--h) * 1px); }
+  .l-fremont { --h: 34; } .l-som { --h: 19; } .l-pb { --h: 23; } .l-worley { --h: 26; } .l-sj { --h: 24; } .l-bigge { --h: 21; } .l-rme { --h: 28; } .l-nus { --h: 32; }
+}
 @media (prefers-color-scheme: dark) {
-  .logo { box-sizing: content-box; background: #fff; padding: 4px 8px; border-radius: 8px; max-width: calc(100% - 16px); }
+  .logo { box-sizing: border-box; background: #fff; padding: 4px 6px; border-radius: 8px; }
 }
 
 section { padding: 5rem 0 0; }
@@ -188,7 +193,7 @@ section, #top { scroll-margin-top: 76px; }
 
   <div class="worked">
     <p>Worked and studied at</p>
-    <ul><li><img class="logo l-fremont" src="logos/fremont.png" alt="City of Fremont" title="City of Fremont"></li><li><img class="logo l-som" src="logos/som.png" alt="Skidmore, Owings &amp; Merrill (SOM)" title="Skidmore, Owings &amp; Merrill"></li><li><img class="logo l-pb" src="logos/pb.png" alt="Parsons Brinckerhoff" title="Parsons Brinckerhoff"></li><li><img class="logo l-worley" src="logos/worley.png" alt="Worley (formerly WorleyParsons)" title="Worley (formerly WorleyParsons)"></li><li><img class="logo l-sj" src="logos/sj.png" alt="Surbana Jurong" title="Surbana Jurong"></li><li><img class="logo l-bigge" src="logos/bigge.png" alt="Bigge Crane and Rigging" title="Bigge Crane and Rigging"></li><li><img class="logo l-rme" src="logos/rme.png" alt="Rubinos &amp; Mesia Engineers (RME)" title="Rubinos &amp; Mesia Engineers"></li><li><img class="logo l-nus" src="logos/nus.png" alt="National University of Singapore (NUS)" title="National University of Singapore"></li></ul>
+    <ul><li class="l-fremont"><img class="logo l-fremont" src="logos/fremont.png" alt="City of Fremont" title="City of Fremont"></li><li class="l-som"><img class="logo l-som" src="logos/som.png" alt="Skidmore, Owings &amp; Merrill (SOM)" title="Skidmore, Owings &amp; Merrill"></li><li class="l-pb"><img class="logo l-pb" src="logos/pb.png" alt="Parsons Brinckerhoff" title="Parsons Brinckerhoff"></li><li class="l-worley"><img class="logo l-worley" src="logos/worley.png" alt="Worley (formerly WorleyParsons)" title="Worley (formerly WorleyParsons)"></li><li class="l-sj"><img class="logo l-sj" src="logos/sj.png" alt="Surbana Jurong" title="Surbana Jurong"></li><li class="l-bigge"><img class="logo l-bigge" src="logos/bigge.png" alt="Bigge Crane and Rigging" title="Bigge Crane and Rigging"></li><li class="l-rme"><img class="logo l-rme" src="logos/rme.png" alt="Rubinos &amp; Mesia Engineers (RME)" title="Rubinos &amp; Mesia Engineers"></li><li class="l-nus"><img class="logo l-nus" src="logos/nus.png" alt="National University of Singapore (NUS)" title="National University of Singapore"></li></ul>
   </div>
 
   <section id="about" class="about">
