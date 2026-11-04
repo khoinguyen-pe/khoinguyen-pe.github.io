@@ -24,13 +24,13 @@ body {
   background: var(--bg); color: var(--ink);
   font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 1.0625rem; line-height: 1.65;
-  padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+  padding: 0 0 env(safe-area-inset-bottom, 0px);
 }
 a { color: var(--accent); text-underline-offset: 3px; }
 a:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
 .wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.5rem; }
 
-.hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: center; padding: 5rem 0 3rem; }
+.hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: center; padding: 4rem 0 3rem; }
 .kicker { color: var(--accent); font-weight: 700; font-size: 0.95rem; }
 h1 { font-weight: 800; font-size: clamp(2.6rem, 6vw, 4rem); line-height: 1.05; letter-spacing: -0.03em; margin-top: 0.5rem; }
 .intro { margin-top: 1.25rem; font-size: 1.2rem; color: var(--muted); max-width: 36ch; }
@@ -101,8 +101,30 @@ h3 { font-size: 1.08rem; font-weight: 700; }
 .contact a:not(.btn) { color: inherit; }
 footer { padding: 2rem 0 2.5rem; color: var(--muted); font-size: 0.9rem; }
 
+.topnav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); -webkit-backdrop-filter: saturate(1.4) blur(12px); backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top, 0px); }
+.navrow { display: flex; align-items: center; gap: 1.5rem; height: 60px; }
+.brand { font-weight: 800; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; white-space: nowrap; }
+.topnav ul { display: flex; gap: 0.25rem; list-style: none; padding: 0; margin-left: auto; }
+.topnav ul a { display: block; padding: 0.4rem 0.75rem; border-radius: 999px; color: var(--muted); font-weight: 600; font-size: 0.95rem; text-decoration: none; white-space: nowrap; }
+.topnav ul a:hover, .topnav ul a[aria-current] { color: var(--ink); background: var(--soft); }
+.navcta { padding: 0.45rem 1rem; border-radius: 999px; background: var(--ink); color: var(--bg); font-weight: 700; font-size: 0.95rem; text-decoration: none; white-space: nowrap; }
+.navcta:hover { background: var(--accent); color: #fff; }
+section, #top { scroll-margin-top: 76px; }
 @media (max-width: 760px) {
-  .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 3rem; }
+  .navrow { gap: 0.5rem; }
+  .brand { display: none; }
+  .topnav ul { margin-left: -0.75rem; overflow-x: auto; scrollbar-width: none; }
+  .topnav ul a { padding: 0.4rem 0.6rem; font-size: 0.9rem; }
+  .navcta { margin-left: auto; padding: 0.4rem 0.85rem; font-size: 0.9rem; }
+}
+@media (max-width: 440px) {
+  .navcta { display: none; }
+  .topnav ul { margin: 0 auto; }
+  .topnav ul a { padding: 0.4rem 0.55rem; font-size: 0.88rem; }
+}
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 2rem; }
   .portrait { order: -1; justify-self: start; max-width: 160px; border-radius: 22px; }
   .facts { grid-template-columns: 1fr 1fr; padding: 1.25rem; gap: 1.25rem 1rem; }
   .facts strong { font-size: 1.2rem; }
@@ -111,15 +133,27 @@ footer { padding: 2rem 0 2.5rem; color: var(--muted); font-size: 0.9rem; }
 </style>
 </head>
 <body>
-<div class="wrap">
+<nav class="topnav" aria-label="Main">
+  <div class="wrap navrow">
+    <a class="brand" href="#top">Khoi Nguyen, P.E.</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#credentials">Licenses</a></li>
+    </ul>
+    <a class="navcta" href="#contact">Contact</a>
+  </div>
+</nav>
+<div class="wrap" id="top">
   <header class="hero">
     <div>
       <p class="kicker">Civil and structural engineer, P.E.</p>
       <h1>Khoi Nguyen</h1>
-      <p class="intro">I design structures and build them. Co-founder of Plankore, a licensed professional engineer and general contractor in California, and a former plan check professional.</p>
+      <p class="intro">I design structures and build them. Co-founder of <a href="https://plankore.ai">Plankore</a>, a licensed professional engineer and general contractor in California, and a former plan check professional.</p>
       <div class="cta">
         <a class="btn btn-main" href="mailto:khoi@plankore.ai">Email Khoi</a>
-        <a class="btn btn-ghost" href="https://plankore.ai">Visit Plankore</a>
+        <a class="btn btn-ghost" href="#projects">See projects</a>
       </div>
     </div>
     <img class="portrait" src="https://github.com/khoinguyen-pe.png?size=680" onerror="this.onerror=null;this.src='khoi.jpg'" alt="Portrait of Khoi Nguyen">
@@ -137,16 +171,15 @@ footer { padding: 2rem 0 2.5rem; color: var(--muted); font-size: 0.9rem; }
     <ul><li>City of Fremont</li><li>Skidmore, Owings &amp; Merrill</li><li>Parsons Brinckerhoff</li><li>WorleyParsons</li><li>Surbana Jurong</li><li>Bigge Crane and Rigging</li><li>Rubinos &amp; Mesia</li></ul>
   </div>
 
-  <section id="credentials">
-    <h2>Licenses and education</h2>
+  <section id="projects">
+    <h2>Selected projects</h2>
     <div class="cards">
-      <div class="card"><h3>Professional Engineer, Civil</h3><p class="num">California license #89319</p><a class="verified" href="https://search.dca.ca.gov/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Verify license</a></div>
-      <div class="card"><h3>Contractor licenses</h3><p class="num">Class A, General Engineering<br>Class B, General Building<br>California license #1121625</p><a class="verified" href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Verify license</a></div>
-      <div class="card"><h3>Education</h3><p class="num">M.S. in Civil Engineering<br>National University of Singapore, 2011</p><p class="num" style="margin-top: 0.75rem">B.Eng. in Civil Engineering<br>National University of Singapore, 2007</p></div>
-    </div>
-    <div class="sub">
-      <h3>Software and codes</h3>
-      <ul class="pills"><li>ETABS</li><li>SAP2000</li><li>SAFE</li><li>RAM</li><li>RISA 3D</li><li>AutoCAD</li><li>Revit</li><li>Plaxis</li><li>EnerCal</li><li>S-Concrete</li><li>ASCE 7</li><li>ACI 318</li><li>AISC 360 and 341</li><li>NDS</li><li>California Building Code</li></ul>
+      <div class="card project"><img class="shot" src="project-cleveland-clinic-weston.jpg" alt="3D structural model of the Cleveland Clinic Weston emergency department and ICU tower" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Healthcare</span><h3>Cleveland Clinic Weston, Florida</h3><p class="role">Structural engineer, SOM</p><p>$302M, 6-story, 75,000 sq ft emergency and ICU tower. Designed the framing, footings and connections for 180 mph hurricane winds.</p></div></div>
+      <div class="card project"><img class="shot" src="project-circle-line-mrt.jpg" alt="Platform level of a Circle Line MRT station in Singapore" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Transit</span><h3>Kent Ridge and Holland Village MRT Stations, Singapore</h3><p class="role">Structural engineer, Parsons Brinckerhoff</p><p>$500M underground Circle Line stations. Designed entrances, ventilation shafts, link-ways and a 6 ft thick platform slab, then managed the construction stage.</p></div></div>
+      <div class="card project"><img class="shot" src="project-senoko-power.jpg" alt="Aerial view of the Senoko combined cycle power plant" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Energy</span><h3>Senoko Power Plant, Singapore</h3><p class="role">Project engineer, WorleyParsons</p><p>$600M conversion of three 250&nbsp;MW oil-fired plants into two 430&nbsp;MW gas-fired combined cycle plants. Technical consultant on design and construction.</p></div></div>
+      <div class="card project"><img class="shot" src="project-ohare-a380-gate.jpg" alt="Plan of the A380 passenger boarding bridges at O’Hare Terminal 5" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Aviation</span><h3>O’Hare Terminal 5 A380 Gates, Chicago</h3><p class="role">Structural engineer, Rubinos &amp; Mesia</p><p>Gate and boarding bridge upgrade so Terminal 5 can serve the Airbus A380, the world’s largest passenger jet.</p></div></div>
+      <div class="card project"><img class="shot" src="project-mmhe-offshore-yard.jpg" alt="Offshore platform modules at the MMHE fabrication yard" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Marine and offshore</span><h3>MMHE Offshore Platform Yards, Malaysia</h3><p class="role">Structural engineer, Parsons Brinckerhoff</p><p>Designed 7 ft thick concrete bulkheads for 6,300 psf loads, and skidding facilities that move 52,000-ton platforms.</p></div></div>
+      <div class="card project"><img class="shot" src="project-joo-seng-green.jpg" alt="Joo Seng Green residential tower under construction" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Residential</span><h3>Joo Seng Green, Singapore</h3><p class="role">Resident engineer, Surbana Jurong</p><p>$32M development: four 12- to 18-story buildings with 243 apartments and a 6-story carpark on 433 piles. On site from foundations to handover.</p></div></div>
     </div>
   </section>
 
@@ -186,15 +219,16 @@ footer { padding: 2rem 0 2.5rem; color: var(--muted); font-size: 0.9rem; }
     </ol>
   </section>
 
-  <section id="projects">
-    <h2>Selected projects</h2>
+  <section id="credentials">
+    <h2>Licenses and education</h2>
     <div class="cards">
-      <div class="card project"><img class="shot" src="project-cleveland-clinic-weston.jpg" alt="3D structural model of the Cleveland Clinic Weston emergency department and ICU tower" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Healthcare</span><h3>Cleveland Clinic Weston, Florida</h3><p class="role">Structural engineer, SOM</p><p>$302M, 6-story, 75,000 sq ft emergency and ICU tower. Designed the framing, footings and connections for 180 mph hurricane winds.</p></div></div>
-      <div class="card project"><img class="shot" src="project-circle-line-mrt.jpg" alt="Platform level of a Circle Line MRT station in Singapore" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Transit</span><h3>Kent Ridge and Holland Village MRT Stations, Singapore</h3><p class="role">Structural engineer, Parsons Brinckerhoff</p><p>$500M underground Circle Line stations. Designed entrances, ventilation shafts, link-ways and a 6 ft thick platform slab, then managed the construction stage.</p></div></div>
-      <div class="card project"><img class="shot" src="project-senoko-power.jpg" alt="Aerial view of the Senoko combined cycle power plant" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Energy</span><h3>Senoko Power Plant, Singapore</h3><p class="role">Project engineer, WorleyParsons</p><p>$600M conversion of three 250&nbsp;MW oil-fired plants into two 430&nbsp;MW gas-fired combined cycle plants. Technical consultant on design and construction.</p></div></div>
-      <div class="card project"><img class="shot" src="project-ohare-a380-gate.jpg" alt="Plan of the A380 passenger boarding bridges at O’Hare Terminal 5" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Aviation</span><h3>O’Hare Terminal 5 A380 Gates, Chicago</h3><p class="role">Structural engineer, Rubinos &amp; Mesia</p><p>Gate and boarding bridge upgrade so Terminal 5 can serve the Airbus A380, the world’s largest passenger jet.</p></div></div>
-      <div class="card project"><img class="shot" src="project-mmhe-offshore-yard.jpg" alt="Offshore platform modules at the MMHE fabrication yard" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Marine and offshore</span><h3>MMHE Offshore Platform Yards, Malaysia</h3><p class="role">Structural engineer, Parsons Brinckerhoff</p><p>Designed 7 ft thick concrete bulkheads for 6,300 psf loads, and skidding facilities that move 52,000-ton platforms.</p></div></div>
-      <div class="card project"><img class="shot" src="project-joo-seng-green.jpg" alt="Joo Seng Green residential tower under construction" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">Residential</span><h3>Joo Seng Green, Singapore</h3><p class="role">Resident engineer, Surbana Jurong</p><p>$32M development: four 12- to 18-story buildings with 243 apartments and a 6-story carpark on 433 piles. On site from foundations to handover.</p></div></div>
+      <div class="card"><h3>Professional Engineer, Civil</h3><p class="num">California license #89319</p><a class="verified" href="https://search.dca.ca.gov/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Verify license</a></div>
+      <div class="card"><h3>Contractor licenses</h3><p class="num">Class A, General Engineering<br>Class B, General Building<br>California license #1121625</p><a class="verified" href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Verify license</a></div>
+      <div class="card"><h3>Education</h3><p class="num">M.S. in Civil Engineering<br>National University of Singapore, 2011</p><p class="num" style="margin-top: 0.75rem">B.Eng. in Civil Engineering<br>National University of Singapore, 2007</p></div>
+    </div>
+    <div class="sub">
+      <h3>Software and codes</h3>
+      <ul class="pills"><li>ETABS</li><li>SAP2000</li><li>SAFE</li><li>RAM</li><li>RISA 3D</li><li>AutoCAD</li><li>Revit</li><li>Plaxis</li><li>EnerCal</li><li>S-Concrete</li><li>ASCE 7</li><li>ACI 318</li><li>AISC 360 and 341</li><li>NDS</li><li>California Building Code</li></ul>
     </div>
   </section>
 
@@ -209,6 +243,19 @@ footer { padding: 2rem 0 2.5rem; color: var(--muted); font-size: 0.9rem; }
 
   <footer>© <span id="year">2026</span> Khoi Nguyen, P.E.</footer>
 </div>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+(function () {
+  var links = document.querySelectorAll(".topnav ul a");
+  if (!("IntersectionObserver" in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      links.forEach(function (a) { a.toggleAttribute("aria-current", a.getAttribute("href") === "#" + e.target.id); });
+    });
+  }, { rootMargin: "-40% 0px -55% 0px" });
+  ["projects", "about", "experience", "credentials"].forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+})();
+</script>
 </body>
 </html>
